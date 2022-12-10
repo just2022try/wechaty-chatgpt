@@ -42,7 +42,7 @@ wechaty
       }
       if (friendship.type() === wechaty.Friendship.Type.Confirm) {
         const contact = friendship.contact();
-        await contact.say('你好呀，我是chatgpt小助手，可以把我拉到群里和大家一起玩，也可以单独发/chatgpt 指令来召唤我哦');
+        await contact.say('你好呀，我是chatgpt小助手，可以把我拉到群里和大家一起玩，也可以单独发/chatgpt 指令或者@我来召唤我哦');
         await contact.say('/chatgpt 讲个笑话');
       }
     } catch (e) {
@@ -98,8 +98,8 @@ async function reply(room, contact, content) {
     const target = room || contact;
     await send(target, 'dong');
   }
-  if (content.startsWith('/c ')) {
-    const request = content.replace('/c ', '');
+  if (content.startsWith('')) {
+    const request = content.replace('', '');
     await chatgptReply(room, contact, request);
   }
   if (content.startsWith('/chatgpt ')) {
